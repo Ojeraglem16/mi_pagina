@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perla del Mamoré</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        nav {
+            background-color: #343a40;
+        }
+
+        nav .navbar-brand {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        nav .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        nav .navbar-nav .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+        nav .navbar-toggler-icon {
+            background-color: #ffc107;
+        }
+
+        .store-container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .store-container h1 {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 40px;
+        }
+
+        .product {
+            display: inline-block;
+            width: 220px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.1);
+        }
+
+        .product h3 {
+            color: #007bff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .product input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .product button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product button:hover {
+            background-color: #0056b3;
+        }
+
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cart:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .cart-details {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .cart-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .cart-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart-details ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .cart-details p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .cart-details button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-details button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-dark navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <span>E.S. PERLA DEL MAMORE</span>
+                <img src="logo del surtidor.jpg" alt="Logo" width="50" height="50" class="me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="prin.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contactanos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda Amiga</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Usuario ▼
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+                            <li><a class="dropdown-item" href="index.html" onclick="cerrarSesion()">Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="store-container">
+        <h1>Tienda Amiga</h1>
+
+        <!-- Producto 1 -->
+        <div class="product">
+            <img src="producto1.webp" alt="Producto 1">
+            <h3>detergente</h3>
+            <p>Precio: $10</p>
+            <input type="number" id="cantidad1" value="1" min="1">
+            <button type="button" onclick="agregarAlCarrito('detergente', 10, 'cantidad1')">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <img src="producto4.webp" alt="Producto 2">
+            <h3>cocacola</h3>
+            <p>Precio: $20</p>
+            <input type="number" id="cantidad2" value="1" min="1">
+            <button type="button" onclick="agregarAlCarrito('cocacola', 20, 'cantidad2')">Agregar al carrito</button>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <img src="producto3.webp" alt="Producto 3">
+            <h3>jugo de tomate</h3>
+            <p>Precio: $15</p>
+            <input type="number" id="cantidad3" value="1" min="1">
+            <button type="button" onclick="agregarAlCarrito('jabón líquido', 15, 'cantidad3')">Agregar al
+                carrito</button>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product">
+            <img src="producto2.webp" alt="Producto 4">
+            <h3>mermelada</h3>
+            <p>Precio: $25</p>
+            <input type="number" id="cantidad4" value="1" min="1">
+            <button type="button" onclick="agregarAlCarrito('gaseosa', 25, 'cantidad4')">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <!-- Carrito de compras -->
+    <div class="cart" onclick="mostrarCarrito()">
+        🛒 Carrito
+    </div>
+
+    <div class="cart-details" id="cartDetails" style="display:none;">
+        <h3>Carrito de Compras</h3>
+        <ul id="cartItemsList"></ul>
+        <p id="cartTotal">Total: $0</p>
+        <button type="button" onclick="terminarCompra()">Finalizar Compra</button>
+    </div>
+
+    <!-- Cargar la librería jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        let carrito = [];
+
+        function agregarAlCarrito(nombre, precio, cantidadId) {
+            let cantidad = parseInt(document.getElementById(cantidadId).value);
+            carrito.push({ nombre, precio, cantidad });
+            actualizarCarrito();
+            alert(nombre + " agregado al carrito");
+        }
+
+        function actualizarCarrito() {
+            let cartItemsList = document.getElementById('cartItemsList');
+            let cartTotal = document.getElementById('cartTotal');
+            let total = 0;
+            cartItemsList.innerHTML = ''; // Limpiamos la lista de productos
+            carrito.forEach(item => {
+                let itemElement = document.createElement('li');
+                itemElement.textContent = `${item.nombre} - Cantidad: ${item.cantidad} - Total: $${item.precio * item.cantidad}`;
+                cartItemsList.appendChild(itemElement);
+                total += item.precio * item.cantidad;
+            });
+            cartTotal.textContent = `Total: $${total}`;
+            document.getElementById('cartDetails').style.display = carrito.length > 0 ? 'block' : 'none';
+        }
+
+        function mostrarCarrito() {
+            if (carrito.length === 0) {
+                alert("El carrito está vacío");
+                return;
+            }
+            let mensaje = "Carrito:\n";
+            let total = 0;
+            carrito.forEach(item => {
+                let subtotal = item.precio * item.cantidad;
+                mensaje += `${item.nombre} - Cantidad: ${item.cantidad} - Total: $${subtotal}\n`;
+                total += subtotal;
+            });
+            mensaje += `\nTotal a pagar: $${total}`;
+            if (confirm(mensaje + "\n\n¿Deseas terminar la compra?")) {
+                generarRecibo(carrito, total);
+            }
+        }
+
+        function generarRecibo(carrito, total) {
+            const { jsPDF } = window.jspdf;
+            let doc = new jsPDF();
+
+            // Encabezado
+            doc.setFontSize(20);
+            doc.setTextColor(0, 51, 102);
+            doc.text("Recibo de compra - Tienda Amiga", 20, 20);
+
+            // Información de la tienda
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0);
+            doc.text("Tienda Amiga - E.S. PERLA DEL MAMORE", 20, 30);
+            doc.text("Dirección: AV Los almendros 123", 20, 35);
+            doc.text("Teléfono: (123) 456-7890", 20, 40);
+
+            // Línea de separación
+            doc.setLineWidth(0.5);
+            doc.line(20, 45, 190, 45);
+
+            // Títulos de la lista de productos
+            doc.setFontSize(14);
+            doc.setTextColor(0, 51, 102);
+            doc.text("Productos Comprados", 20, 55);
+
+            // Detalle de los productos
+            doc.setFontSize(12);
+            let y = 60;
+            carrito.forEach(item => {
+                doc.text(`${item.nombre} - Cantidad: ${item.cantidad} - $${item.precio * item.cantidad}`, 20, y);
+                y += 10;
+            });
+
+            // Línea de separación
+            doc.setLineWidth(0.5);
+            doc.line(20, y + 5, 190, y + 5);
+
+            // Total
+            doc.setFontSize(14);
+            doc.setTextColor(0, 51, 102);
+            doc.text(`Total a pagar: $${total}`, 20, y + 15);
+
+            // Línea de separación final
+            doc.setLineWidth(0.5);
+            doc.line(20, y + 20, 190, y + 20);
+
+            // Footer con agradecimiento
+            doc.setFontSize(10);
+            doc.setTextColor(0, 102, 204);
+            doc.text("¡Gracias por tu compra! Vuelve pronto.", 20, y + 30);
+
+            // Guardar el PDF
+            doc.save("recibo.pdf");
+
+            // Limpiar el carrito
+            carrito = [];
+            actualizarCarrito();
+            alert("Compra finalizada. Recibo descargado.");
+        }
+
+        function terminarCompra() {
+            generarRecibo(carrito, parseFloat(document.getElementById('cartTotal').textContent.replace('Total: $', '')));
+        }
+
+        // Función para simular el cierre de sesión
+        function cerrarSesion() {
+            alert("Sesión cerrada. Redirigiendo al inicio...");
+        }
+    </script>
+
+    <!-- Pie de página -->
+    <footer class="text-center mt-5 py-3">
+        <p>&copy; 2025 - E.S. PERLA DEL MAMORE</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

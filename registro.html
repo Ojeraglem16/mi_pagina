@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #ff4b2b;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 75, 43, 0.5);
+        }
+
+        .btn {
+            background: #ff4b2b;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #e14026;
+        }
+
+        .link {
+            display: block;
+            margin-top: 10px;
+            color: #ff4b2b;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function registrar(event) {
+            event.preventDefault();
+            alert('Registro exitoso');
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Crear Cuenta</h2>
+        <form onsubmit="registrar(event)">
+            <label>Nombre Completo</label>
+            <input type="text" placeholder="Tu nombre completo" required>
+            <label>Correo Electrónico</label>
+            <input type="email" placeholder="ejemplo@mail.com" required>
+            <label>Contraseña</label>
+            <input type="password" placeholder="Crear una contraseña" required>
+            <label>Confirmar Contraseña</label>
+            <input type="password" placeholder="Repite tu contraseña" required>
+            <button class="btn" type="submit">Registrarse</button>
+        </form>
+        <a href="index.html" class="link">¿Ya tienes una cuenta? Iniciar Sesión</a>
+    </div>
+</body>
+
+</html>
