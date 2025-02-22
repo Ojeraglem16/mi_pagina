@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background: #00b09b;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #028a73;
+        }
+
+        .link {
+            display: block;
+            margin-top: 15px;
+            color: #00b09b;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function iniciarSesion() {
+            window.location.href = 'prin.html';
+        }
+
+        function redirigirRegistro() {
+            window.location.href = 'registro.html';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <input type="email" placeholder="Correo electrónico">
+        <input type="password" placeholder="Contraseña">
+        <button class="btn" onclick="iniciarSesion()">Ingresar</button>
+        <a href="#" class="link" onclick="redirigirRegistro()">¿No tienes cuenta? Regístrate</a>
+    </div>
+</body>
+
+</html>
